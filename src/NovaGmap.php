@@ -2,6 +2,7 @@
 
 namespace Acm\NovaGmap;
 
+use Illuminate\Support\Arr;
 use Laravel\Nova\Fields\Field;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -42,8 +43,8 @@ class NovaGmap extends Field
 	protected function fillAttributeFromRequest(NovaRequest $request, $requestAttribute, $model, $attribute)
 	{
 		$model->setAttribute($attribute, (object) [
-			'latitude'  => array_get($request, $attribute.'.latitude'),
-			'longitude' => array_get($request, $attribute.'.longitude'),
+			'latitude'  => Arr::get($request, $attribute.'.latitude'),
+			'longitude' => Arr::get($request, $attribute.'.longitude'),
 		]);
 	}
 }
