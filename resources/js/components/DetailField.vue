@@ -1,9 +1,9 @@
 <template>
-    <panel-item :field="field">
-        <template slot="value">
+    <PanelItem :field="field">
+        <template v-slot:value>
             <div class="google-map" ref="map"></div>
         </template>
-    </panel-item>
+    </PanelItem>
 </template>
 
 <script>

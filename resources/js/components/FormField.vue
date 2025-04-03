@@ -1,6 +1,6 @@
 <template>
-	<default-field :field="field" :errors="errors">
-		<template slot="field">
+	<DefaultField :field="field" :errors="errors">
+		<template v-slot:field>
 			<input ref="address" id="address" type="text" v-placeholder="placeholderText" v-model="address" />
 
 			<div class="google-map" ref="map"></div>
@@ -10,7 +10,7 @@
 				<input id="longitude" v-name="longitude_fieldname" type="hidden" v-model="longitude" />
 			</div>
 		</template>
-	</default-field>
+	</DefaultField>
 </template>
 
 <script>
